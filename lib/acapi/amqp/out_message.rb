@@ -2,8 +2,8 @@ require 'securerandom'
 
 module Acapi
   module Amqp
-    class OutMessage 
-      AMQP_MESSAGE_PROPERTIES = [:correlation_id, :reply_to, :user_id, :content_type]
+    class OutMessage
+      AMQP_MESSAGE_PROPERTIES = [:correlation_id, :reply_to, :user_id, :content_type, :timestamp]
 
       def initialize(a_id, e_name, s_time, e_time, m_id, p = {})
         @app_id = a_id

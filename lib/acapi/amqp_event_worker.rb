@@ -25,6 +25,8 @@ module Acapi
 
         worker_class = worker_classes[@worker_id]
 
+        Process.setproctitle("[Acapi::AmqpEventWorker] " + worker_class.name)
+
         @workers  = [
           worker_class.new(nil, pool, { connection: config[:connection] })
         ]
